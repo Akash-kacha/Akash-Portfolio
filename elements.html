@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project's</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header style="font-size:40px" id="header">
+									<a href="index.html" class="logo"><strong>Project's</strong> </a>
+									
+								</header>
+
+							<!-- Content -->
+		<br>
+							<style>
+        .project-card {
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-align: center; /* Center project name */
+        }
+        .project-card img {
+            max-width: 150px;
+            height: 150px; /* Square images */
+            object-fit: cover; /* Crop/scale images */
+        }
+        .project-details {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            width: 80%;
+            max-width: 800px;
+            overflow-y: auto;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        .grid-item {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-item h5 {
+          margin-top: 5px; /* Add space between image and project name */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="grid-container">
+            <div class="grid-item project-card" data-project="project1">
+                <img src="images/Taxi.jpg" alt="Project 1">
+                <h5>Taxi Data Analysis</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project2">
+                <img src="images/crop.jpg" alt="Project 2">
+                <h5>Crop Production Analysis (1997-2015)</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project3">
+                <img src="images/HR.jpg" alt="Project 3">
+                <h5>HR Analytics Dashboard</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project4">
+                <img src="images/Book.jpeg" alt="Project 4">
+                <h5>Book Recommendation System</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project5">
+                <img src="images/coffee.jpeg" alt="Project 5">
+                <h5>Coffee Sales Dashboard</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project6">
+                <img src="images/logestic.jpeg" alt="Project 6">
+                <h5>Logistics Dataset Analysis Using SQL</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project7">
+                <img src="images/Anime.jpeg" alt="Project 7">
+                <h5>Anime Quote Recommendation Web App</h5>
+            </div>
+            <div class="grid-item project-card" data-project="project8">
+                <img src="images/Netflix.jpg" alt="Project 8">
+                <h5>Netflix Data Analysis Dashboard</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="project-details">
+        <button class="close">&times;</button>
+        <h2 id="project-title"></h2>
+        <p><strong>Business Problem:</strong> <span id="business-problem"></span></p>
+        <p><strong>Project Description:</strong> <span id="project-description"></span></p>
+        <p><strong>Project Link:</strong> <a href="#" id="project-link" target="_blank"></a></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.project-card').click(function() {
+                const project = $(this).data('project');
+                $('.project-details').fadeIn();
+                $('.overlay').fadeIn();
+
+                // Project details (replace with your actual data)
+                const projectData = {
+                    project1: {
+                        title: 'Taxi Data Analysis (Maximizing Revenue for Drivers)',
+                        businessProblem: 'Should drivers prioritize specific payment modes to maximize earnings? And Are certain payment methods associated with higher fares?',
+                        description: 'This project focuses on analyzing taxi fare data to uncover insights that can help drivers maximize their revenue. Using Python, statistical methods, and data visualization, the project explores the impact of different payment methods on fare amounts. By identifying trends in payment modes and evaluating their relationship with fare values, the analysis provides actionable recommendations for taxi drivers and ride-hailing companies. The findings are compiled into a professional presentation to support executive decision-making.',
+                        link: 'https://github.com/Akash-kacha/Taxi-data_analysis'
+                    },
+                    project2: {
+                        title: 'Crop Production Analysis (1997-2015)',
+                        businessProblem: 'Which crops consistently produce the highest yields in each state? And What are the long-term patterns in crop production from 1997 to 2015?',
+                        description: 'This project focuses on analyzing historical crop production data to uncover trends and patterns that can inform agricultural decision-making. Using Python, the dataset was categorized into specific crop types for streamlined analysis and comparison. A time series analysis was conducted to examine long-term trends and cyclical patterns in crop production from 1997 to 2015. Additionally, the project identified the top five crops with the highest average yield in each state, providing valuable insights for farmers, policymakers, and agricultural businesses.',
+                        link: 'https://github.com/Akash-kacha/Crop-Production-Analysis-India-1997-2015-'
+                    },
+                    project3: {
+                        title: 'HR Analytics Dashboard',
+                        businessProblem: 'High employee attrition rate (16.12%) is leading to increased costs and potential loss of productivity Analyize all details about attrition',
+                        description: 'This project involves designing and developing an HR analytics dashboard to help organizations gain actionable insights into key workforce trends. The dashboard provides a comprehensive view of employee attrition, department-wise performance, and demographic patterns. By identifying and tracking critical HR metrics and KPIs, the project enables HR teams to make data-driven decisions to improve employee retention, optimize departmental performance, and enhance overall organizational health.',
+                        link: 'https://github.com/Akash-kacha/Tableau-project/blob/main/HR%20ANALYTICS%20DASHBOARD.twbx'
+                    },
+                    project4: {
+                        title: 'Book Recommendation System',
+                        businessProblem: 'How can book attributes (e.g., genre, author, keywords) be leveraged to generate relevant recommendations?',
+                        description: 'This project focuses on building a personalized book recommendation system using content-based filtering. By analyzing user preferences, the system suggests books that closely match their interests, enhancing the reading experience. The model evaluates book attributes such as genre, author, and description to generate tailored recommendations, helping users discover new books aligned with their tastes.',
+                        link: 'https://github.com/Akash-kacha/Book_Recomandation_System'
+                    },
+                    project5: {
+                        title: 'Coffee Sales Dashboard',
+                        businessProblem: 'Which coffee roast types and sizes generate the highest revenue? and How do different regions respond to specific coffee products?',
+                        description: 'This project involves developing an interactive Coffee Sales Dashboard to analyze sales trends, customer behavior, and product preferences. The dashboard provides a visual representation of total sales over time, sales distribution by country, and top customers. It also includes filters for roast type, size, and loyalty card usage to allow for in-depth analysis. By leveraging data visualization, the project aims to help businesses optimize their sales strategies, identify high-performing products, and enhance customer engagement.',
+                        link: 'https://github.com/Akash-kacha/Excel-project/blob/main/Coffee%20sales%20dashboard.xlsx'
+                    },
+                    project6: {
+                        title: 'Logistics Dataset Analysis Using SQL',
+                        businessProblem: 'The logistics company needs to optimize its operations to ensure efficient and cost-effective delivery of both tangible and intangible products to customers both domestically and internationally.This involves integrating suppliers, manufacturers, import/export activities, and various logistical facilities at strategic, tactical, and operational levels',
+                       description: 'WE will use some basic MY SQL functions like Group by, Join, Where and some aggregate functions like Count, Max to find meaningful insights.',
+                        link: 'https://github.com/Akash-kacha/Logestic-Data-Analysis-SQL-'
+                    },
+                    project7: {
+                        title: 'Anime Quote Recommendation Web App',
+                        businessProblem: '-',
+                        description: 'This project focuses on building an Anime Quote Recommendation System, which provides users with personalized anime quotes based on their preferences. Using Streamlit, the recommendation system was transformed into an interactive web application, allowing users to explore inspirational, emotional, and iconic quotes from various anime series. The system utilizes techniques such as content-based filtering or keyword matching to suggest relevant quotes, enhancing user engagement and experience. The intuitive UI makes it easy for anime enthusiasts to discover meaningful quotes that resonate with their mood or interests.',
+                        link: 'https://github.com/Akash-kacha/Anime-Quote-Project_'
+                    },
+                    project8: {
+                        title: 'Netflix Data Analysis Dashboard',
+                        businessProblem: 'What are the most popular genres, and how has their demand evolved over time? And How do different ratings impact audience engagement and viewership trends?',
+                        description: 'This project involves developing an interactive Netflix Dashboard that provides valuable insights into the platform’s content distribution, genre trends, ratings, and country-wise availability. Using data visualization techniques, the dashboard helps analyze key aspects such as the distribution of movies and TV shows, rating breakdowns, top genres, and content growth over time. The primary objective is to assist stakeholders in understanding Netflixs content strategy, optimizing content recommendations, and making data driven decisions for content acquisition.',
+                        link: 'https://github.com/Akash-kacha/Tableau-project/blob/main/Netflix%20Dashboard.twbx'
+                    },
+                };
+
+                $('#project-title').text(projectData[project].title);
+                $('#business-problem').text(projectData[project].businessProblem);
+                $('#project-description').text(projectData[project].description);
+                $('#project-link').attr('href', projectData[project].link).text(projectData[project].link);
+
+            });
+
+            $('.close, .overlay').click(function() {
+                $('.project-details').fadeOut();
+                $('.overlay').fadeOut();
+            });
+        });
+    </script>
+
+</body>
+
+											
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Resume</a></li>
+										<li><a href="elements.html">Project's</a></li>
+										
+										<li><a href="Contactinfo.html">Contact Info</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								
+							<!-- Section -->
+								
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
