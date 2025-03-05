@@ -52,11 +52,21 @@
 									<span class="image object">
 										<img src="images/Ak.jpg" class="responsive-image" alt="Responsive Image" />
 									<style>
-  .responsive-image {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+										
+  .image-container {
+    width: 300px; /* Example container size */
+    height: 200px; /* Example container size */
+    border: 1px solid #ccc; /* For visualization */
+    overflow: hidden; /* Important for object-fit: cover */
   }
-</style>	
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or contain, fill, etc. */
+  }
+  
+									</style>	
 									</span>
 								</section>
 
